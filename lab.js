@@ -245,9 +245,19 @@ console.log(cat1.name);
 //Code here
 
 class Wizard {
-
+  constructor(name, favoriteSpell, age) {
+    this.name = name;
+    this.favoriteSpell = favoriteSpell;
+    this.age = age;
+  }
+  castSpell() {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
 }
 
+let wizrad1 = new Wizard("merlin", "fire", 77)
+
+wizrad1.castSpell()
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -273,6 +283,30 @@ class Wizard {
 
 //Code Here
 
+class Phone {
+  constructor(brand, model, storage, color, price, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = sold;
+  }
+  sell() {
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice;
+    console.log(this.price)
+  }
+}
+
+let clayPhone = new Phone("apple", "iphone40", 128,  "black", 200)
+
+clayPhone.sell()
+clayPhone.changePrice(300)
+
   
 /*
     Next make three new phone instances using your class.
@@ -285,6 +319,9 @@ class Wizard {
 */
 
 //Code Here
+let msPhone = new Phone("microsoft", "window", 100,  "black", 400)
+let googPhone = new Phone("google", "pixel", 200,  "black", 300)
+let samPhone = new Phone("samsung", "note", 150,  "black", 250)
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -295,6 +332,7 @@ class Wizard {
 
 //Code Here 
 
+msPhone.changePrice(500)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -303,6 +341,9 @@ class Wizard {
 */
 
 //Code Here 
+
+googPhone.sell()
+console.log(googPhone.sold)
 
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
